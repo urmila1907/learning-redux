@@ -1,3 +1,4 @@
+import ProductCard from "../ProductCard/ProductCard";
 import "./product.scss"
 import { useState,useEffect } from "react";
 
@@ -14,8 +15,7 @@ const Product = () => {
     <div className="main-box">
       <h1 className="title">Product Dashboard</h1>
       {JSON.stringify(products)}
-      
-     
+      <ProductCard/>
     </div>
   );
 }
