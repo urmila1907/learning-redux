@@ -46,7 +46,6 @@ const Product = () => {
    );
   })
 
-  console.log(JSON.stringify(products));
   return (
     <div className="main-box">
       <h1 className="title">Product Dashboard</h1>
