@@ -1,6 +1,5 @@
 import Cart from "./components/Cart";
 import Dashboard from "./components/Dashboard";
-import Product from "./components/Product";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/store";
@@ -15,9 +14,6 @@ function App() {
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </BrowserRouter>
-        <div className="app">
-          <Product />
-        </div>
       </Provider>
     </>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const cartProducts = useSelector(state=>state.cart);
@@ -36,10 +36,10 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <Link to="/cart" style={{textDecoration:"none"}}>
+            <Link to="/cart" style={{ textDecoration: "none" }}>
               <div className="d-flex justify-content-end gap-3">
                 <p className="text-white">My bag</p>
-                <p className="text-white">0</p>
+                <p className="text-white">{cartProducts.length}</p>
               </div>
             </Link>
           </div>
