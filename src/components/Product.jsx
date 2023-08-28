@@ -15,6 +15,7 @@ const Product = () => {
   dispatch(getProducts());
   },[])
 
+
   const addToCart = (product)=>{
    dispatch(add(product));
   }
