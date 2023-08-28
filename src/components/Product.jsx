@@ -1,8 +1,10 @@
 
-import "./product.scss"
 import { useState,useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { add } from "../store/cartSlice";
 
 const Product = () => {
+  const dispatch = useDispatch();
   const [products,setProducts] = useState([]);
 
   useEffect(()=>{
@@ -10,6 +12,10 @@ const Product = () => {
     .then((res) => res.json())
     .then((result) => setProducts(result));
   },[])
+
+  const addToCart = (product)=>{
+   dispatch(add(product));
+  }
 
   const cards = products.map((product)=>{
    return (
@@ -36,6 +42,7 @@ const Product = () => {
            <div className="d-flex align-items-center justify-content-center">
              <button
                className="btn btn-primary"
+               onClick={()=>addToCart(product)}
              >
                Add to cart
              </button>
@@ -48,7 +55,7 @@ const Product = () => {
 
   return (
     <div className="main-box">
-      <h1 className="title">Product Dashboard</h1>
+      <h1 className="title" style={{textAlign:'center',margin:'1.5rem'}}>Product Dashboard</h1>
       <div className="d-flex gap-4 flex-wrap m-4 p-2">{cards}</div>
     </div>
   );
